@@ -21,6 +21,7 @@
   --color-ad-dark-bg: #000000;
   --color-skeleton: rgba(0, 0, 0, 0.08);
   --color-skeleton-highlight: rgba(0, 0, 0, 0.14);
+  --color-modal-backdrop: rgba(0, 0, 0, 0.8);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -355,6 +356,10 @@ body {
   margin-bottom: 32px;
 }
 
+.video-grid .video:not(.video-skeleton) {
+  cursor: pointer;
+}
+
 .video .thumbnail img {
   width: 100%;
   border-radius: 12px;
@@ -556,6 +561,105 @@ body {
 
 .skeleton-line--short {
   width: 55%;
+}
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.video-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.video-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--color-modal-backdrop);
+}
+
+.video-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(960px, 100%);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+.video-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.video-modal__close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.video-modal__player {
+  background: #000;
+}
+
+#modal-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-modal__details {
+  padding: 16px 20px 20px;
+}
+
+.video-modal__title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.video-modal__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.video-modal__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.video-modal__channel {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
 }
 
 @media (prefers-color-scheme: dark) {

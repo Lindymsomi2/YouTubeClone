@@ -85,3 +85,77 @@ function handleScroll() {
 }
 
 scrollContainer.addEventListener("scroll", handleScroll);
+
+const DEFAULT_VIDEO_SRC =
+  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+
+const videoModal = document.getElementById("video-modal");
+const modalVideo = document.getElementById("modal-video");
+const modalTitle = document.getElementById("video-modal-title");
+const modalChannel = document.getElementById("video-modal-channel");
+const modalAvatar = document.getElementById("video-modal-avatar");
+
+function openVideoModal(videoCard) {
+  const title = videoCard.querySelector(".video-details p")?.textContent.trim();
+  const channel = videoCard
+    .querySelector(".posted-by > span")
+    ?.textContent.trim();
+  const thumbnail = videoCard.querySelector(".thumbnail img")?.src;
+  const avatar = videoCard.querySelector(".profile img")?.src;
+  const videoSrc = videoCard.dataset.videoSrc || DEFAULT_VIDEO_SRC;
+
+  modalTitle.textContent = title || "Video";
+  modalChannel.textContent = channel || "";
+  modalVideo.poster = thumbnail || "";
+  modalVideo.src = videoSrc;
+
+  if (avatar) {
+    modalAvatar.src = avatar;
+    modalAvatar.hidden = false;
+  } else {
+    modalAvatar.hidden = true;
+    modalAvatar.removeAttribute("src");
+  }
+
+  videoModal.classList.add("is-open");
+  videoModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+
+  modalVideo.play().catch(() => {});
+}
+
+function closeVideoModal() {
+  modalVideo.pause();
+  modalVideo.removeAttribute("src");
+  modalVideo.removeAttribute("poster");
+  modalVideo.load();
+
+  videoModal.classList.remove("is-open");
+  videoModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+function handleVideoCardClick(event) {
+  if (event.target.closest(".video-menu, #ad-btn, button")) return;
+
+  const videoCard = event.target.closest(
+    ".video-grid .video:not(.video-skeleton)"
+  );
+  if (!videoCard) return;
+
+  openVideoModal(videoCard);
+}
+
+scrollContainer.addEventListener("click", handleVideoCardClick);
+
+videoModal.addEventListener("click", (event) => {
+  if (event.target.closest("[data-modal-close]")) {
+    closeVideoModal();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && videoModal.classList.contains("is-open")) {
+    closeVideoModal();
+  }
+});
