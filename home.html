@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>YouTube | Clone</title>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <img class="svg-icon" src="assets/menu.svg" alt="Menu Icon" />
+        <img src="assets/logo.svg" alt="" /> <sup> ZA</sup>
+      </div>
+      <div class="searchbar">
+        <form class="search">
+          <input type="text" placeholder="Search" />
+          <button><img src="assets/searchicon.svg" alt="Search Icon" /></button>
+        </form>
+        <button id="mic-button">
+          <img
+            class="icon"
+            src="assets/voice_search.svg"
+            alt="Voice Search Icon"
+          />
+        </button>
+      </div>
+
+      <div id="navigation-icons">
+        <button id="create_button">
+          <img src="assets/add.svg" alt="Add Icon" />
+          <h3>Create</h3>
+        </button>
+        <button id="bell-button">
+          <img
+            class="icon"
+            src="assets/notification.svg"
+            alt="Notification Bell Icon"
+          />
+        </button>
+        <button id="profile">
+          <i class="material-icons account-icon">account_circle</i>
+        </button>
+      </div>
+    </header>
+
+    <!-- main starts here -->
+    <main class="main">
+      <!-- left section -->
+      <div class="categories">
+        <div class="category-section">
+          <span class="category active">
+            <img src="assets/home.svg" alt="Home Icon" />
+            Home
+          </span>
+          <span class="category">
+            <img src="assets/shorts.svg" alt="Shorts Icon" /> Shorts
+          </span>
+        </div>
+        <!-- 2nd catergory section  -->
+
+        <div class="category-section">
+          <p class="category_heading">
+            Subscriptions <img src="assets/arrow.svg" alt="" />
+          </p>
+          <span class="category">
+            <i class="material-icons">account_circle</i>
+            Tech With Tim
+          </span>
+          <span class="category">
+            <i class="material-icons">account_circle</i>
+            Stephanie Soo
+          </span>
+          <span class="category">
+            <i class="material-icons">account_circle</i>
+            Charlotte Dobre TV
+          </span>
+          <span class="category">
+            <i class="material-icons">account_circle</i>
+            Soo Beauty 수뷰티
+          </span>
+          <span class="category">
+            <i class="material-icons">account_circle</i>
+            Rotten Mango
+          </span>
+          <span class="category">
+            <i class="material-icons">account_circle</i>
+            Club Shay Shay
+          </span>
+          <span class="category">
+            <i class="material-icons">account_circle</i>
+            Programming with Mosh
+          </span>
+          <span class="category">
+            <i class="material-icons">account_circle</i>
+            Animelogy
+          </span>
+          <span class="category">
+            <img src="assets/down-arrow.svg" alt="Down Arrow Icon" />
+            Show more
+          </span>
+        </div>
+        <!-- 3rd catergory section  -->
+        <div class="category-section">
+          <p class="category_heading">
+            You <img src="assets/arrow.svg" alt="" />
+          </p>
+          <span class="category">
+            <img src="assets/history.svg" alt="History Clock Icon" />
+            History
+          </span>
+          <span class="category">
+            <img src="assets/playlist.svg" alt="History Clock Icon" />
+            Playlists
+          </span>
+          <span class="category">
+            <img src="assets/watch-later.svg" alt="History Clock Icon" />
+            Watch Later
+          </span>
+          <span class="category">
+            <img src="assets/liked-videos.svg" alt="History Clock Icon" />
+            Liked videos
+          </span>
+          <span class="category">
+            <img src="assets/downloads.svg" alt="History Clock Icon" />
+            Downloads
+          </span>
+          <span class="category">
+            <img src="assets/courses.svg" alt="History Clock Icon" />
+            Courses
+          </span>
+        </div>
+        <!-- 4th catergory section  -->
+        <div class="category-section">
+          <p class="category_heading">Explore</p>
+          <span class="category">
+            <img src="assets/music.svg" alt="History Clock Icon" />
+            Music
+          </span>
+          <span class="category">
+            <img src="assets/gaming.svg" alt="History Clock Icon" />
+            Gaming
+          </span>
+          <span class="category">
+            <img src="assets/news.svg" alt="History Clock Icon" />
+            News
+          </span>
+          <span class="category">
+            <img src="assets/down-arrow.svg" alt="History Clock Icon" />
+            Show more
+          </span>
+        </div>
+        <!-- 5th catergory section  -->
+        <div class="category-section">
+          <p class="category_heading">More from YouTube</p>
+          <span class="category">
+            <img src="assets/youtube-premium.svg" alt="History Clock Icon" />
+            YouTube Premium
+          </span>
+          <span class="category">
+            <img src="assets/youtube-music.svg" alt="History Clock Icon" />
+            YouTube Music
+          </span>
+          <span class="category">
+            <img src="assets/youtube-kids.svg" alt="History Clock Icon" />
+            YouTube Kids
+          </span>
+        </div>
+        <!-- 6th catergory section  -->
+        <div class="category-section">
+          <span class="category">
+            <img src="assets/reporthistory.svg" alt="History Clock Icon" />
+            Report history
+          </span>
+        </div>
+
+        <div class="cagories-footer">
+          <div class="footer-section">
+            <span>About</span>
+            <span>Press</span>
+            <span>Copyright</span>
+            <span>Contact Us</span>
+            <span>Creator</span>
+            <span>Advertise</span>
+            <span>Developers</span>
+          </div>
+          <div class="footer-section">
+            <span>Terms</span>
+            <span>Privacy</span>
+            <span>Policy & Safety</span>
+            <span>How YouTube works</span>
+            <span>Test new features</span>
+          </div>
+          <span class="copyright">&copy; 2026 Google LLC</span>
+        </div>
+      </div>
+      <!-- videos section -->
+      <div class="videos">
+        <div id="rect">
+          <div class="filter-section">
+            <button class="fs-btn active">All</button>
+            <button class="fs-btn">Hair Conditioners</button>
+            <button class="fs-btn">Hairstyle products</button>
+            <button class="fs-btn">Concealers</button>
+            <button class="fs-btn">Music</button>
+            <button class="fs-btn">Mixes</button>
+            <button class="fs-btn">Storytelling</button>
+            <button class="fs-btn">Gaming</button>
+            <button class="fs-btn">Haul videos</button>
+            <button class="fs-btn">Live</button>
+            <button class="fs-btn">AI</button>
+            <!-- <button class="fs-btn">BTS</button> -->
+          </div>
+
+          <div id="next">
+            <button id="next-button">
+              <img src="assets/arrow.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="video-grid">
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/cursoradv.avif" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/cursor.png" alt="" />
+              </div>
+              <div class="video-details">
+                <p>Try Cursor Today</p>
+                <div class="posted-by">
+                  <span>Sponsored · Cursor</span>
+                </div>
+              </div>
+
+              <!-- menu dots icon -->
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+            <div id="ad-btn">
+              <button id="ad-light">Watch</button>
+              <button id="ad-dark">Learn More</button>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/shartia.avif" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/shartia_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  ⭐️Wash Day & Whatever ⭐️ Making Wash Day Easier One Tip at a
+                  Time
+                </p>
+                <div class="posted-by">
+                  <span>Sharatia Banks</span>
+                  <div class="views-date">
+                    <span>2.4k Views</span>
+                    <span>·</span>
+                    <span>5 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/sisi.avif" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/sisi_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>The Bangchan Situation is Crazy!</p>
+                <div class="posted-by">
+                  <span>Sisilessthan3</span>
+                  <div class="views-date">
+                    <span>51k Views</span>
+                    <span>·</span>
+                    <span>7 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- shorts -->
+        <div id="shorts-section">
+          <span id="rectangle-shorts">
+            <img src="assets/redshorts.svg" alt="Shorts Icon in Colour" />
+            <h2>Shorts</h2>
+          </span>
+          <span id="ellipses-dots">
+            <img src="assets/dots.svg" alt="Dots" />
+          </span>
+        </div>
+        <!-- shorts 1 -->
+        <div class="shorts-grid">
+          <div class="shorts">
+            <img src="assets/shorts1.avif" alt="" />
+
+            <div class="details">
+              <div class="video-details">
+                <p>PSA DON"T GE THESE PRODUCTS ..! ❌...</p>
+
+                <div class="views-date">
+                  <span>12k Views</span>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- shorts 2 -->
+
+          <div class="shorts">
+            <img src="assets/shorts2.avif" alt="" />
+
+            <div class="details">
+              <div class="video-details">
+                <p>
+                  Is 345 cream worth it? 🥴YesStyle code:GRACE888 to get $$..
+                </p>
+
+                <div class="views-date">
+                  <span>5.6m views</span>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- shorts 3 -->
+
+          <div class="shorts">
+            <img src="assets/shorts3.avif" alt="" />
+
+            <div class="details">
+              <div class="video-details">
+                <p>what i did at shoulder length vs waist length</p>
+
+                <div class="views-date">
+                  <span>92k views</span>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- shorts 4 -->
+
+          <div class="shorts">
+            <img src="assets/shorts4.avif" alt="" />
+
+            <div class="details">
+              <div class="video-details">
+                <p>The BEST SKINCARE I EMPTIED IN 2025! #skincareempties</p>
+
+                <div class="views-date">
+                  <span>17k views</span>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- shorts 5 -->
+
+          <div class="shorts">
+            <img src="assets/shorts5.avif" alt="" />
+
+            <div class="details">
+              <div class="video-details">
+                <p>Same girl 🤣😂#chaeunwoo #astro...</p>
+
+                <div class="views-date">
+                  <span>735k views</span>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2nd video grid section -->
+        <div class="video-grid">
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v1.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v1_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>How To Learn To Code In 2026</p>
+                <div class="posted-by">
+                  <span>Tina Huang</span>
+                  <div class="views-date">
+                    <span>585k Views</span>
+                    <span>·</span>
+                    <span>2 months ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v2.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v2_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  #170) WE ARE ENDING THIS! Hyperpigmentation Finale! Chemist...
+                </p>
+                <div class="posted-by">
+                  <span>Chemist Confessions</span>
+                  <div class="views-date">
+                    <span>17k Views</span>
+                    <span>·</span>
+                    <span>2 months ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v3.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v3_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  Playlist 1940s Vintage Jazz | Smooth Swing Classics for Cozy
+                  Evenings and..
+                </p>
+                <div class="posted-by">
+                  <span>Beret Jazz Café</span>
+                  <div class="views-date">
+                    <span>96 Views</span>
+                    <span>·</span>
+                    <span>3 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v4.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v4_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>The Truth About My Life in Korea(It's Not What You Think)</p>
+                <div class="posted-by">
+                  <span>Esther Imoowo</span>
+                  <div class="views-date">
+                    <span>9.2k views</span>
+                    <span>·</span>
+                    <span>3 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v5.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v5_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  GUESS THE NIGERIAN (FT. NELLA ROSE, DARKEST MAN & SHTSNGIGS)
+                </p>
+                <div class="posted-by">
+                  <span>Harry Pinero</span>
+                  <div class="views-date">
+                    <span>1.1m views</span>
+                    <span>·</span>
+                    <span>2 months ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v6.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v6_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  Calm Productivity 🌿 R&B & lofi Beats for Peaceful Focus &
+                  Flow
+                </p>
+                <div class="posted-by">
+                  <span>Lumea Focus</span>
+                  <div class="views-date">
+                    <span>291k Views</span>
+                    <span>·</span>
+                    <span>6 months ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v7.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v7_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  Dr. Althea 345 cream & Cleansing Balm..Honest review🌸#grwm
+                  #fashio..
+                </p>
+                <div class="posted-by">
+                  <span>Rose Benn</span>
+                  <div class="views-date">
+                    <span>64 views</span>
+                    <span>·</span>
+                    <span>1 day ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v8.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v8_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  WELL, I TRIED THE BLUE BOTTLES..(cecred protection collection
+                  review)
+                </p>
+                <div class="posted-by">
+                  <span>WillOnAWhim</span>
+                  <div class="views-date">
+                    <span>26k views</span>
+                    <span>·</span>
+                    <span>3 weeks ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v9.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v9_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>THE WORKOUT SPLIT THAT TRANSFORMED MY PHYSIQUE (my...</p>
+                <div class="posted-by">
+                  <span>MDJ FITNESS</span>
+                  <div class="views-date">
+                    <span>1.9m views</span>
+                    <span>·</span>
+                    <span>2 years ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v10.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v10_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  Reborn, I Wished Them Well and Married His Eldest Brother, the
+                  One He...
+                </p>
+                <div class="posted-by">
+                  <span>Love Turned Cold</span>
+                  <div class="views-date">
+                    <span>14k views</span>
+                    <span>·</span>
+                    <span>2 weeks ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v11.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v11_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>I Made Korean Vocabulary Impossible to Forget</p>
+                <div class="posted-by">
+                  <span>Korean with Ina</span>
+                  <div class="views-date">
+                    <span>39k views</span>
+                    <span>·</span>
+                    <span>11 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v12.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v12_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>How I finally got rid of my PITTED scarring</p>
+                <div class="posted-by">
+                  <span>Edward Avila</span>
+                  <div class="views-date">
+                    <span>79k views</span>
+                    <span>·</span>
+                    <span>12 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v13.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v13_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>If I Had 30 days To Get Lean, I'd Do This</p>
+                <div class="posted-by">
+                  <span>Henley Fitness</span>
+                  <div class="views-date">
+                    <span>96k views</span>
+                    <span>·</span>
+                    <span>1 month ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v14.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v14_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  Every Product I've Emptied in 2026 (and What I'd Rebuy 👀)
+                </p>
+                <div class="posted-by">
+                  <span>Hyram</span>
+                  <div class="views-date">
+                    <span>39k views</span>
+                    <span>·</span>
+                    <span>13 days ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v15.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v15_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  Late Night Smooth R&B Playlist ♟️ Chill vibe (The Queen's
+                  Gambit Tribute)
+                </p>
+                <div class="posted-by">
+                  <span>Soft Room</span>
+                  <div class="views-date">
+                    <span>376 views</span>
+                    <span>·</span>
+                    <span>1 day ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v16.jpg" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile"></div>
+              <div class="video-details">
+                <p>
+                  Mix - [CHOREOGRAPHY] BTS (방탄소년단) '달려 라 방탄 (RUN BTS)'
+                  Dance Practice
+                </p>
+                <div class="posted-by">
+                  <span>BTS, Miguel, j-hope and more</span>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v17.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v17_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>Every Deep Core Mistake And How To Fix Them</p>
+                <div class="posted-by">
+                  <span>Meli</span>
+                  <div class="views-date">
+                    <span>142k views</span>
+                    <span>·</span>
+                    <span>2 weeks ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v18.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v18_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  The Exact 30-Day Protocol That Reversed My Gut Damage, Acne
+                  &...
+                </p>
+                <div class="posted-by">
+                  <span>Health Coach Kayo | Nutritionist</span>
+                  <div class="views-date">
+                    <span>80k views</span>
+                    <span>·</span>
+                    <span>1 month ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v19.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v19_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>Best of Got Damned 👉 Seasons 20 & 21 | Wild 'N Out</p>
+                <div class="posted-by">
+                  <span>Wild 'N Out</span>
+                  <div class="views-date">
+                    <span>1.8m views</span>
+                    <span>·</span>
+                    <span>4 months ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v20.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v20_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>
+                  Vlog🥊3 | balancing lifting & kickboxing, what I eat, new
+                  routine, making steam..
+                </p>
+                <div class="posted-by">
+                  <span>Dodo</span>
+                  <div class="views-date">
+                    <span>108k views</span>
+                    <span>·</span>
+                    <span>4 daysago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="video">
+            <div class="thumbnail">
+              <img src="assets/v21.webp" alt="" />
+            </div>
+            <div class="details">
+              <div class="profile">
+                <img src="assets/v21_profile.jpg" alt="" />
+              </div>
+              <div class="video-details">
+                <p>Koreans react to How beautiful SOUTH AFRICA Is!</p>
+                <div class="posted-by">
+                  <span>Awesome World</span>
+                  <div class="views-date">
+                    <span>443k views</span>
+                    <span>·</span>
+                    <span>1 month ago</span>
+                  </div>
+                </div>
+              </div>
+              <div class="video-menu">
+                <img src="assets/dots.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- video section ends -->
+      </div>
+    </main>
+  </body>
+</html>
