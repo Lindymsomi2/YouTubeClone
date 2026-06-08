@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+/* dark and light mode created using cursor ai */
 :root {
   color-scheme: light dark;
 
@@ -23,7 +24,7 @@
   --color-skeleton-highlight: rgba(0, 0, 0, 0.14);
   --color-modal-backdrop: rgba(0, 0, 0, 0.8);
 }
-
+/* dark and light mode created using cursor ai  by using media query*/
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg-primary: #0f0f0f;
@@ -510,6 +511,7 @@ body {
   right: -10%;
 }
 
+/* make the videos in the page constantly load creating an infinite scroll, done by using cursor ai */
 @keyframes skeleton-pulse {
   0%,
   100% {

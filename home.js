@@ -1,14 +1,20 @@
+// this whole page was created by cursor AI, this is the JavaScript
+// part that handles the infinite scroll part as well as the video pop up feature
+
 const LOAD_COUNT = 4;
 const LOADER_DURATION = 1500;
 const SCROLL_THRESHOLD = 200;
 
+//retrieves the main video container that scrolls and all the videos inside it
 const scrollContainer = document.querySelector(".videos");
 const videoGrids = document.querySelectorAll(".video-grid");
+//target the very last video grid row to append new content to it
 const targetGrid = videoGrids[videoGrids.length - 1];
 
+//state  trackers
 let isLoading = false;
 let lastScrollTop = 0;
-
+//create a fake "skeleton" loading card with pulsing animation
 function createSkeleton() {
   const skeleton = document.createElement("div");
   skeleton.className = "video video-skeleton";
@@ -24,7 +30,7 @@ function createSkeleton() {
   `;
   return skeleton;
 }
-
+//generates the skeleton placeholders
 function showSkeletons() {
   const fragment = document.createDocumentFragment();
 
@@ -34,19 +40,19 @@ function showSkeletons() {
 
   targetGrid.appendChild(fragment);
 }
-
+//finds active skeleton loader and deletes them
 function removeSkeletons() {
   targetGrid.querySelectorAll(".video-skeleton").forEach((skeleton) => {
     skeleton.remove();
   });
 }
-
+//grabs the real video cards in the grid to use as a template duplicate
 function getSourceVideos() {
   return Array.from(
     targetGrid.querySelectorAll(".video:not(.video-skeleton)")
   ).slice(0, LOAD_COUNT);
 }
-
+//acts as a copying machine
 function appendDuplicateVideos() {
   const fragment = document.createDocumentFragment();
 
@@ -58,23 +64,24 @@ function appendDuplicateVideos() {
 
   targetGrid.appendChild(fragment);
 }
-
+//coordinates the loading process
 function loadMoreVideos() {
   if (isLoading) return;
 
   isLoading = true;
   showSkeletons();
-
+  //this is the delay timeout for the videos to load like youtube
   setTimeout(() => {
     removeSkeletons();
     appendDuplicateVideos();
     isLoading = false;
   }, LOADER_DURATION);
 }
-
+//monitors the scroll behaviour
 function handleScroll() {
   const { scrollTop, scrollHeight, clientHeight } = scrollContainer;
-  const nearBottom = scrollTop + clientHeight >= scrollHeight - SCROLL_THRESHOLD;
+  const nearBottom =
+    scrollTop + clientHeight >= scrollHeight - SCROLL_THRESHOLD;
   const scrollingDown = scrollTop > lastScrollTop;
 
   lastScrollTop = scrollTop;
@@ -86,6 +93,7 @@ function handleScroll() {
 
 scrollContainer.addEventListener("scroll", handleScroll);
 
+//fallback video source
 const DEFAULT_VIDEO_SRC =
   "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 
@@ -95,6 +103,7 @@ const modalTitle = document.getElementById("video-modal-title");
 const modalChannel = document.getElementById("video-modal-channel");
 const modalAvatar = document.getElementById("video-modal-avatar");
 
+//opens the video player popup
 function openVideoModal(videoCard) {
   const title = videoCard.querySelector(".video-details p")?.textContent.trim();
   const channel = videoCard
@@ -123,7 +132,8 @@ function openVideoModal(videoCard) {
 
   modalVideo.play().catch(() => {});
 }
-
+//clones off the media stream, resets popup values, slides out the layout overlay
+// panel and restores default scroll
 function closeVideoModal() {
   modalVideo.pause();
   modalVideo.removeAttribute("src");
@@ -134,7 +144,7 @@ function closeVideoModal() {
   videoModal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 }
-
+//main click handler
 function handleVideoCardClick(event) {
   if (event.target.closest(".video-menu, #ad-btn, button")) return;
 
